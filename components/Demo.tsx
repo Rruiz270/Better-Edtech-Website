@@ -40,12 +40,16 @@ export default function Demo() {
           </div>
 
           <div className="relative">
-            <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-8 h-96 flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300">
-              <div className="text-center text-gray-custom">
-                <Play size={64} className="mx-auto mb-4 text-yellow-green" />
-                <p className="text-lg font-semibold">Demo da Plataforma Alumni</p>
-                <p className="text-sm opacity-75">LMS personalizado e adaptativo</p>
-              </div>
+            <iframe
+              className="w-full h-96 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
+              src="https://www.youtube.com/embed/QpdhBUYk7Kk"
+              title="Alumni Platform Demo - LMS Personalizado"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+            <div className="absolute top-4 left-4 bg-yellow-green text-rich-black px-3 py-1 rounded-full text-sm font-semibold">
+              Demo ao Vivo
             </div>
           </div>
         </div>

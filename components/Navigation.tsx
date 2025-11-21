@@ -21,6 +21,7 @@ export default function Navigation() {
     { name: 'Parcerias', href: '#partnerships' },
     { name: 'Casos', href: '#cases' },
     { name: 'Treinamento IA', href: '#ai-training' },
+    { name: 'Manifesto', href: '#manifesto' },
     { name: 'Contato', href: '#contact' },
   ]
 
@@ -33,7 +34,19 @@ export default function Navigation() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <a href="#" className="flex items-center">
-            <span className="text-2xl font-bold text-rich-black tracking-tight">Better Tech</span>
+            <img 
+              src="/logo-better-tech.png" 
+              alt="Better Tech Logo" 
+              className="h-8 w-auto"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                target.nextElementSibling?.setAttribute('style', 'display: block');
+              }}
+            />
+            <span className="text-2xl font-bold text-rich-black tracking-tight" style={{display: 'none'}}>
+              Better Tech
+            </span>
           </a>
           
           <div className="hidden md:flex space-x-8">

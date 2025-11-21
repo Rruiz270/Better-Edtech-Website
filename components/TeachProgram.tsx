@@ -79,12 +79,18 @@ export default function TeachProgram() {
             </a>
           </div>
           
-          {/* Video Placeholder */}
-          <div className="bg-baby-powder/10 rounded-2xl p-8 h-80 flex items-center justify-center border-2 border-yellow-green">
-            <div className="text-center">
-              <Brain size={64} className="mx-auto mb-4 text-yellow-green" />
-              <p className="text-lg font-semibold">Demo do Programa TEACH</p>
-              <p className="text-sm opacity-75">Transformação educacional com IA</p>
+          {/* TEACH Program Video */}
+          <div className="relative">
+            <iframe
+              className="w-full h-80 rounded-2xl border-2 border-yellow-green"
+              src="https://www.youtube.com/embed/hJP5GqnTrNo"
+              title="Programa TEACH - Technology Education for Advanced Classroom Help"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+            <div className="absolute top-4 right-4 bg-yellow-green text-rich-black px-3 py-1 rounded-full text-sm font-semibold">
+              Programa TEACH
             </div>
           </div>
         </div>

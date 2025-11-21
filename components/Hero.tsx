@@ -45,15 +45,17 @@ export default function Hero() {
 
           {/* Right content - Video and Formula */}
           <div className="space-y-8">
-            {/* Video placeholder */}
+            {/* Educational Tech Video */}
             <div className="relative">
-              <div className="w-full h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center shadow-xl">
-                <div className="text-center text-gray-custom">
-                  <Play size={64} className="mx-auto mb-4 text-yellow-green" />
-                  <p className="text-lg font-semibold">Vídeo da Plataforma</p>
-                  <p className="text-sm opacity-75">Demonstração das soluções</p>
-                </div>
-              </div>
+              <iframe
+                className="w-full h-64 rounded-2xl shadow-xl"
+                src="https://www.youtube.com/embed/5MgBikgcWnY"
+                title="Better Tech - Transformando a Educação com IA"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+              <div className="absolute inset-0 bg-gradient-to-t from-rich-black/20 to-transparent rounded-2xl pointer-events-none"></div>
             </div>
 
             {/* Interactive Formula */}
