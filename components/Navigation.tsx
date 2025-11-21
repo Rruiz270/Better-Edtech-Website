@@ -21,6 +21,7 @@ export default function Navigation() {
     { name: 'Parcerias', href: '#partnerships' },
     { name: 'Casos', href: '#cases' },
     { name: 'Treinamento IA', href: '#ai-training' },
+    { name: 'Blog', href: '#blog' },
     { name: 'Manifesto', href: '#manifesto' },
     { name: 'Contato', href: '#contact' },
   ]

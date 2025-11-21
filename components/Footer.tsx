@@ -64,11 +64,11 @@ export default function Footer() {
               <a href="#about" className="block text-gray-custom hover:text-yellow-green transition-colors duration-200">
                 Sobre Nós
               </a>
-              <a href="#careers" className="block text-gray-custom hover:text-yellow-green transition-colors duration-200">
-                Carreiras
-              </a>
               <a href="#blog" className="block text-gray-custom hover:text-yellow-green transition-colors duration-200">
                 Blog
+              </a>
+              <a href="#careers" className="block text-gray-custom hover:text-yellow-green transition-colors duration-200">
+                Carreiras
               </a>
             </div>
           </div>

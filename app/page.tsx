@@ -4,6 +4,7 @@ import Demo from '@/components/Demo'
 import Partnerships from '@/components/Partnerships'
 import CaseStudies from '@/components/CaseStudies'
 import TeachProgram from '@/components/TeachProgram'
+import Blog from '@/components/Blog'
 import Manifesto from '@/components/Manifesto'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
@@ -17,6 +18,7 @@ export default function Home() {
       <Partnerships />
       <CaseStudies />
       <TeachProgram />
+      <Blog />
       <Manifesto />
       <Contact />
       <Footer />
