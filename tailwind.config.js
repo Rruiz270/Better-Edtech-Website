@@ -19,10 +19,13 @@ module.exports = {
       },
       animation: {
         'float': 'float 20s ease-in-out infinite',
-        'shimmer': 'shimmer 3s infinite',
+        'shimmer': 'shimmer 3s ease-in-out infinite',
         'bounce-custom': 'bounce-custom 2s infinite',
         'pulse-custom': 'pulse-custom 2s infinite',
         'fade-in': 'fade-in 0.6s ease-out forwards',
+      },
+      backgroundSize: {
+        '300%': '300%',
       },
       keyframes: {
         'float': {
@@ -30,8 +33,9 @@ module.exports = {
           '50%': { transform: 'translateY(-50px) rotate(180deg)' },
         },
         'shimmer': {
-          '0%': { left: '-100%' },
-          '100%': { left: '100%' },
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
         },
         'bounce-custom': {
           '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },

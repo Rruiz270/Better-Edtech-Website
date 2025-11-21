@@ -14,44 +14,61 @@ export default function EcosystemHero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Main Hero Content */}
         <div className={`text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          {/* Logo */}
-          <div className="flex justify-center mb-8">
-            <img 
-              src="/logo-better-tech.png" 
-              alt="Better Tech Logo" 
-              className="h-16 w-auto"
-            />
+          {/* Epic Main Headline */}
+          <div className="relative mb-8">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-rich-black mb-4 tracking-tight leading-none">
+              Better
+            </h1>
+            <div className="relative">
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-6 tracking-tight leading-none">
+                <span className="bg-gradient-to-r from-yellow-green via-pale-azure to-yellow-green bg-clip-text text-transparent animate-shimmer bg-300% leading-none">
+                  Ecosystem
+                </span>
+              </h1>
+              {/* Animated underline */}
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 md:w-48 lg:w-64 h-2 bg-gradient-to-r from-yellow-green to-pale-azure rounded-full animate-pulse"></div>
+            </div>
           </div>
 
-          {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-rich-black mb-6 tracking-tight">
-            Better
-            <span className="block gradient-text">Ecosystem</span>
-          </h1>
+          {/* Powerful Subheadline */}
+          <div className="max-w-5xl mx-auto mb-16">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-custom mb-6 leading-tight">
+              <span className="font-medium text-rich-black">Uma família de produtos integrados</span><br />
+              que <span className="text-yellow-green font-semibold">revoluciona a educação</span>, conecta comunidades<br />
+              e <span className="text-pale-azure font-semibold">impulsiona a transformação digital</span> no Brasil
+            </p>
+          </div>
 
-          {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-gray-custom max-w-4xl mx-auto mb-12 leading-relaxed">
-            Uma família de produtos integrados que revoluciona a educação, 
-            conecta comunidades e impulsiona a transformação digital no Brasil
-          </p>
-
-          {/* Key Stats */}
-          <div className={`grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mb-16 transition-all duration-1200 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-yellow-green mb-2">5</div>
-              <div className="text-sm text-gray-custom">Produtos Integrados</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-pale-azure mb-2">50K+</div>
-              <div className="text-sm text-gray-custom">Usuários Ativos</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-yellow-green mb-2">15+</div>
-              <div className="text-sm text-gray-custom">Estados Brasileiros</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-pale-azure mb-2">2.000+</div>
-              <div className="text-sm text-gray-custom">Educadores Capacitados</div>
+          {/* Stunning Stats Grid */}
+          <div className={`max-w-6xl mx-auto mb-16 transition-all duration-1200 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="group cursor-pointer">
+                <div className="bg-gradient-to-br from-yellow-green/10 to-yellow-green/5 backdrop-blur-sm border border-yellow-green/20 rounded-3xl p-8 hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                  <div className="text-5xl md:text-6xl font-black text-yellow-green mb-3 group-hover:scale-110 transition-transform duration-300">5</div>
+                  <div className="text-lg font-medium text-rich-black">Produtos Integrados</div>
+                </div>
+              </div>
+              
+              <div className="group cursor-pointer">
+                <div className="bg-gradient-to-br from-pale-azure/10 to-pale-azure/5 backdrop-blur-sm border border-pale-azure/20 rounded-3xl p-8 hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                  <div className="text-5xl md:text-6xl font-black text-pale-azure mb-3 group-hover:scale-110 transition-transform duration-300">50K+</div>
+                  <div className="text-lg font-medium text-rich-black">Usuários Ativos</div>
+                </div>
+              </div>
+              
+              <div className="group cursor-pointer">
+                <div className="bg-gradient-to-br from-yellow-green/10 to-yellow-green/5 backdrop-blur-sm border border-yellow-green/20 rounded-3xl p-8 hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                  <div className="text-5xl md:text-6xl font-black text-yellow-green mb-3 group-hover:scale-110 transition-transform duration-300">15+</div>
+                  <div className="text-lg font-medium text-rich-black">Estados Brasileiros</div>
+                </div>
+              </div>
+              
+              <div className="group cursor-pointer">
+                <div className="bg-gradient-to-br from-pale-azure/10 to-pale-azure/5 backdrop-blur-sm border border-pale-azure/20 rounded-3xl p-8 hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                  <div className="text-5xl md:text-6xl font-black text-pale-azure mb-3 group-hover:scale-110 transition-transform duration-300">2.000+</div>
+                  <div className="text-lg font-medium text-rich-black">Educadores Capacitados</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
