@@ -1,7 +1,10 @@
 import Navigation from '@/components/Navigation'
 import Hero from '@/components/Hero'
+import Demo from '@/components/Demo'
 import Partnerships from '@/components/Partnerships'
-import SuccessCases from '@/components/SuccessCases'
+import CaseStudies from '@/components/CaseStudies'
+import TeachProgram from '@/components/TeachProgram'
+import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -9,8 +12,11 @@ export default function Home() {
     <main className="min-h-screen">
       <Navigation />
       <Hero />
+      <Demo />
       <Partnerships />
-      <SuccessCases />
+      <CaseStudies />
+      <TeachProgram />
+      <Contact />
       <Footer />
     </main>
   )

@@ -1,61 +1,63 @@
 'use client'
 
-import { ArrowRight, BookOpen, Brain, Users } from 'lucide-react'
+import { ArrowRight, Play } from 'lucide-react'
+import InteractiveFormula from './InteractiveFormula'
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900"></div>
-      <div className="absolute inset-0 opacity-20">
-        <div className="w-full h-full" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%239C92AC' fillOpacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}></div>
-      </div>
+    <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-20">
+      {/* Animated background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-baby-powder via-pale-azure/10 to-yellow-green/10"></div>
+      <div 
+        className="absolute top-0 right-0 w-[1000px] h-[1000px] rounded-full opacity-10 animate-float"
+        style={{
+          background: 'linear-gradient(45deg, #A4DF00, #6CCFF6)',
+          transform: 'translate(20%, -50%)'
+        }}
+      />
       
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6">
-          <span className="block text-white">Transforming</span>
-          <span className="block gradient-text">Education</span>
-          <span className="block text-white">in the AI Era</span>
-        </h1>
-        
-        <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-          AI-driven educational solutions that create adaptive learning paths and personalized experiences for every student.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-          <button className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 flex items-center justify-center gap-2">
-            Start Demo
-            <ArrowRight size={20} />
-          </button>
-          <button className="border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200">
-            Learn More
-          </button>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
-          <div className="flex flex-col items-center">
-            <div className="bg-primary-600/20 p-6 rounded-full mb-4">
-              <Brain size={48} className="text-primary-500" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left content */}
+          <div className="text-left">
+            <h1 className="text-4xl md:text-6xl font-black leading-tight mb-6">
+              <span className="block text-rich-black">Transformando a</span>
+              <span className="block gradient-text">Educação</span>
+              <span className="block text-rich-black">na Era da</span>
+              <span className="block gradient-text">Inteligência Artificial</span>
+            </h1>
+            
+            <p className="text-xl text-gray-custom mb-8 leading-relaxed">
+              Unimos forças com marcas renomadas para revolucionar a educação através de tecnologia avançada, 
+              oferecendo experiências personalizadas e impactantes para indivíduos, empresas, escolas e governos.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#demo" className="btn-primary inline-flex items-center justify-center gap-2">
+                Ver Demo
+                <Play size={20} />
+              </a>
+              <a href="#ai-training" className="btn-secondary inline-flex items-center justify-center">
+                Treinamento IA
+              </a>
             </div>
-            <h3 className="text-xl font-semibold mb-2">AI-Powered Learning</h3>
-            <p className="text-gray-400 text-center">Adaptive algorithms that personalize education for each student's unique learning style.</p>
           </div>
-          
-          <div className="flex flex-col items-center">
-            <div className="bg-primary-600/20 p-6 rounded-full mb-4">
-              <BookOpen size={48} className="text-primary-500" />
+
+          {/* Right content - Video and Formula */}
+          <div className="space-y-8">
+            {/* Video placeholder */}
+            <div className="relative">
+              <div className="w-full h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center shadow-xl">
+                <div className="text-center text-gray-custom">
+                  <Play size={64} className="mx-auto mb-4 text-yellow-green" />
+                  <p className="text-lg font-semibold">Vídeo da Plataforma</p>
+                  <p className="text-sm opacity-75">Demonstração das soluções</p>
+                </div>
+              </div>
             </div>
-            <h3 className="text-xl font-semibold mb-2">Comprehensive Platform</h3>
-            <p className="text-gray-400 text-center">Complete educational ecosystem with tools for students, teachers, and administrators.</p>
-          </div>
-          
-          <div className="flex flex-col items-center">
-            <div className="bg-primary-600/20 p-6 rounded-full mb-4">
-              <Users size={48} className="text-primary-500" />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Global Network</h3>
-            <p className="text-gray-400 text-center">Connecting educators and institutions worldwide for collaborative learning.</p>
+
+            {/* Interactive Formula */}
+            <InteractiveFormula />
           </div>
         </div>
       </div>

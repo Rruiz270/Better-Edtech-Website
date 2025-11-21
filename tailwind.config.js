@@ -8,18 +8,44 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#f0fdf4',
-          100: '#dcfce7',
-          500: '#22c55e',
-          600: '#16a34a',
-          700: '#15803d',
-          900: '#14532d',
-        }
+        'rich-black': '#001011',
+        'gray-custom': '#757780',
+        'baby-powder': '#FFFFFC',
+        'yellow-green': '#A4DF00',
+        'pale-azure': '#6CCFF6',
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        'sans': ['Inter', 'Segoe UI', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+      },
+      animation: {
+        'float': 'float 20s ease-in-out infinite',
+        'shimmer': 'shimmer 3s infinite',
+        'bounce-custom': 'bounce-custom 2s infinite',
+        'pulse-custom': 'pulse-custom 2s infinite',
+        'fade-in': 'fade-in 0.6s ease-out forwards',
+      },
+      keyframes: {
+        'float': {
+          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+          '50%': { transform: 'translateY(-50px) rotate(180deg)' },
+        },
+        'shimmer': {
+          '0%': { left: '-100%' },
+          '100%': { left: '100%' },
+        },
+        'bounce-custom': {
+          '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
+          '40%': { transform: 'translateY(-10px)' },
+          '60%': { transform: 'translateY(-5px)' },
+        },
+        'pulse-custom': {
+          '0%, 100%': { transform: 'scale(1)', opacity: '0.8' },
+          '50%': { transform: 'scale(1.2)', opacity: '1' },
+        },
+        'fade-in': {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
     },
   },

@@ -1,69 +1,93 @@
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react'
+import { Linkedin, Instagram, MessageCircle, Youtube } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 border-t border-slate-700">
+    <footer className="bg-rich-black text-baby-powder">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Company Info */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold gradient-text mb-4">Better Tech</h3>
-            <p className="text-gray-400 mb-6 max-w-md">
-              Transforming education through AI-powered solutions that adapt to every learner's unique needs and potential.
+            <h3 className="text-2xl font-bold text-yellow-green mb-4">Better Tech</h3>
+            <p className="text-gray-custom mb-6 max-w-md leading-relaxed">
+              Transformando a educação através de tecnologia avançada e soluções personalizadas 
+              para criar o futuro da aprendizagem. Construindo autoridade, conexão, credibilidade 
+              e clareza para o futuro da educação.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-primary-500 transition-colors duration-200">
-                <Linkedin size={24} />
+              <a href="#" className="w-10 h-10 bg-yellow-green rounded-full flex items-center justify-center text-rich-black hover:bg-baby-powder transition-all duration-200">
+                <Linkedin size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary-500 transition-colors duration-200">
-                <Twitter size={24} />
+              <a href="#" className="w-10 h-10 bg-yellow-green rounded-full flex items-center justify-center text-rich-black hover:bg-baby-powder transition-all duration-200">
+                <Instagram size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary-500 transition-colors duration-200">
-                <Github size={24} />
+              <a href="#" className="w-10 h-10 bg-yellow-green rounded-full flex items-center justify-center text-rich-black hover:bg-baby-powder transition-all duration-200">
+                <MessageCircle size={20} />
+              </a>
+              <a href="#" className="w-10 h-10 bg-yellow-green rounded-full flex items-center justify-center text-rich-black hover:bg-baby-powder transition-all duration-200">
+                <Youtube size={20} />
               </a>
             </div>
           </div>
 
+          {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
-            <div className="space-y-3">
-              <div className="flex items-center gap-2 text-gray-400">
-                <Mail size={16} />
-                <span>contact@better-tech.com</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-400">
-                <Phone size={16} />
-                <span>+55 (11) 9999-9999</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-400">
-                <MapPin size={16} />
-                <span>São Paulo, Brazil</span>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
+            <h4 className="text-lg font-bold text-yellow-green mb-4">Serviços</h4>
             <div className="space-y-2">
-              <a href="#demo" className="block text-gray-400 hover:text-primary-500 transition-colors duration-200">
-                Demo
+              <a href="#demo" className="block text-gray-custom hover:text-yellow-green transition-colors duration-200">
+                Plataformas Educacionais
               </a>
-              <a href="#partnerships" className="block text-gray-400 hover:text-primary-500 transition-colors duration-200">
-                Partnerships
+              <a href="#cases" className="block text-gray-custom hover:text-yellow-green transition-colors duration-200">
+                Gestão Educacional
               </a>
-              <a href="#cases" className="block text-gray-400 hover:text-primary-500 transition-colors duration-200">
-                Success Cases
+              <a href="#cases" className="block text-gray-custom hover:text-yellow-green transition-colors duration-200">
+                Soluções Editoriais
               </a>
-              <a href="#ai-training" className="block text-gray-400 hover:text-primary-500 transition-colors duration-200">
-                AI Training
+              <a href="#ai-training" className="block text-gray-custom hover:text-yellow-green transition-colors duration-200">
+                Programa TEACH
+              </a>
+              <a href="#demo" className="block text-gray-custom hover:text-yellow-green transition-colors duration-200">
+                Demonstrações
+              </a>
+            </div>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="text-lg font-bold text-yellow-green mb-4">Empresa</h4>
+            <div className="space-y-2">
+              <a href="#partnerships" className="block text-gray-custom hover:text-yellow-green transition-colors duration-200">
+                Parcerias
+              </a>
+              <a href="#cases" className="block text-gray-custom hover:text-yellow-green transition-colors duration-200">
+                Casos de Sucesso
+              </a>
+              <a href="#about" className="block text-gray-custom hover:text-yellow-green transition-colors duration-200">
+                Sobre Nós
+              </a>
+              <a href="#careers" className="block text-gray-custom hover:text-yellow-green transition-colors duration-200">
+                Carreiras
+              </a>
+              <a href="#blog" className="block text-gray-custom hover:text-yellow-green transition-colors duration-200">
+                Blog
               </a>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-slate-700 pt-8 mt-8 text-center">
-          <p className="text-gray-400">
-            © 2024 Better Tech. All rights reserved. Transforming education for a better future.
-          </p>
+        {/* Bottom */}
+        <div className="border-t border-gray-custom/20 pt-8 mt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-gray-custom text-sm">
+              <p>contato@betteredtech.com.br | +55 (11) 97653-6773 | São Paulo, SP - Brasil</p>
+              <p>CNPJ: 00.000.000/0001-00</p>
+            </div>
+            <div className="text-yellow-green text-sm font-medium">
+              © 2024 Better Tech. Todos os direitos reservados.
+            </div>
+          </div>
+          <div className="text-center mt-4 text-gray-custom text-sm">
+            Pesquisa + Tecnologia + IA + Cursos Especializados + Marketing com Valor + Engajamento = Comunidade
+          </div>
         </div>
       </div>
     </footer>

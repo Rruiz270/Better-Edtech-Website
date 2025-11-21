@@ -1,123 +1,180 @@
 'use client'
 
-import { useState } from 'react'
-import { ExternalLink, Users, Award, Globe } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { Building2, Globe, Users, Award } from 'lucide-react'
 
 export default function Partnerships() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+  const [visibleCards, setVisibleCards] = useState<number[]>([])
 
   const partners = [
     {
-      name: 'Alumni Network',
-      description: 'Global educational alumni network connecting graduates worldwide',
-      category: 'Network',
-      impact: '50K+ Alumni',
-      icon: Users,
-      color: 'bg-blue-600'
+      id: 1,
+      name: 'Alumni',
+      description: 'Centro Binacional Brasil-USA cursos de idiomas com tecnologia avançada para aprendizado híbrido e personalizado',
+      category: 'Educação',
+      highlighted: false,
     },
     {
-      name: 'Sprix Learning',
-      description: 'Advanced learning management and student assessment platform',
-      category: 'Platform',
-      impact: '200+ Schools',
-      icon: Award,
-      color: 'bg-purple-600'
+      id: 2,
+      name: 'Sprix',
+      description: 'Empresa japonesa - Torneio inovador de coding Brasil com competições tecnológicas educacionais',
+      category: 'Tecnologia',
+      highlighted: false,
     },
     {
-      name: 'Google for Education',
-      description: 'Strategic partnership for cloud-based educational solutions',
-      category: 'Technology',
-      impact: 'Global Reach',
-      icon: Globe,
-      color: 'bg-green-600'
+      id: 3,
+      name: 'Enkel + AWS',
+      description: 'Infraestrutura tecnológica robusta e escalável na nuvem para soluções educacionais empresariais',
+      category: 'Infraestrutura',
+      highlighted: false,
     },
     {
-      name: 'Microsoft Education',
-      description: 'Collaborative tools and AI integration for modern classrooms',
-      category: 'Technology',
-      impact: '1M+ Students',
-      icon: Users,
-      color: 'bg-indigo-600'
+      id: 4,
+      name: 'Google',
+      description: 'Tecnologia e inovação educacional de ponta com ferramentas Google for Education integradas',
+      category: 'Tecnologia',
+      highlighted: false,
     },
     {
-      name: 'UNESCO Partnership',
-      description: 'Supporting global education initiatives and digital literacy',
-      category: 'Institution',
-      impact: '80+ Countries',
-      icon: Globe,
-      color: 'bg-orange-600'
+      id: 5,
+      name: 'Jinso',
+      description: 'Soluções educacionais avançadas com IA para matemática e ciências exatas com metodologia japonesa',
+      category: 'EdTech',
+      highlighted: true,
     },
     {
-      name: 'EdTech Alliance',
-      description: 'Leading coalition of educational technology innovators',
-      category: 'Network',
-      impact: '500+ Members',
-      icon: Award,
-      color: 'bg-teal-600'
-    }
+      id: 6,
+      name: 'Kidpreneur',
+      description: 'Educação empreendedora para jovens com foco em inovação, criatividade e desenvolvimento de negócios',
+      category: 'Educação',
+      highlighted: false,
+    },
+    {
+      id: 7,
+      name: 'Sebrae',
+      description: 'Desenvolvimento empresarial e educacional para micro e pequenas empresas com metodologias comprovadas',
+      category: 'Governo',
+      highlighted: false,
+    },
   ]
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const cardId = parseInt(entry.target.getAttribute('data-card-id') || '0')
+            setVisibleCards(prev => [...prev, cardId])
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    const cards = document.querySelectorAll('[data-card-id]')
+    cards.forEach(card => observer.observe(card))
+
+    return () => observer.disconnect()
+  }, [])
+
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case 'Educação': return <Users className="w-6 h-6 text-yellow-green" />
+      case 'Tecnologia': return <Building2 className="w-6 h-6 text-pale-azure" />
+      case 'EdTech': return <Award className="w-6 h-6 text-yellow-green" />
+      case 'Infraestrutura': return <Globe className="w-6 h-6 text-gray-custom" />
+      case 'Governo': return <Building2 className="w-6 h-6 text-rich-black" />
+      default: return <Building2 className="w-6 h-6 text-gray-custom" />
+    }
+  }
+
   return (
-    <section id="partnerships" className="py-20 bg-slate-800">
+    <section id="partnerships" className="py-20 bg-gradient-to-br from-yellow-green/5 to-pale-azure/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="gradient-text">Strategic Partnerships</span>
+          <h2 className="section-title">
+            Nossas <span className="gradient-text">Parcerias Estratégicas</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Collaborating with industry leaders to create innovative educational solutions that transform learning experiences globally.
+          <p className="section-subtitle">
+            Colaboramos com líderes do mercado que compartilham nossa visão de transformar a educação na nova era da IA
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {partners.map((partner, index) => {
-            const IconComponent = partner.icon
-            return (
-              <div
-                key={index}
-                className={`relative bg-slate-900 rounded-xl p-6 border border-slate-700 card-hover cursor-pointer ${
-                  hoveredCard === index ? 'border-primary-500' : ''
-                }`}
-                onMouseEnter={() => setHoveredCard(index)}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div className={`${partner.color} p-3 rounded-lg`}>
-                    <IconComponent size={24} className="text-white" />
-                  </div>
-                  <span className="text-xs px-2 py-1 bg-slate-700 rounded-full text-gray-300">
+          {partners.map((partner, index) => (
+            <div
+              key={partner.id}
+              data-card-id={partner.id}
+              className={`
+                bg-baby-powder rounded-2xl p-6 shadow-lg border-2 transition-all duration-500 cursor-pointer
+                transform hover:scale-105 hover:shadow-xl
+                ${partner.highlighted 
+                  ? 'border-yellow-green shadow-yellow-green/20' 
+                  : 'border-transparent hover:border-yellow-green/50'
+                }
+                ${visibleCards.includes(partner.id) 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-8'
+                }
+                ${hoveredCard === partner.id 
+                  ? 'shadow-2xl border-yellow-green' 
+                  : ''
+                }
+              `}
+              style={{
+                transitionDelay: `${index * 100}ms`
+              }}
+              onMouseEnter={() => setHoveredCard(partner.id)}
+              onMouseLeave={() => setHoveredCard(null)}
+            >
+              {/* Header with icon and category */}
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2">
+                  {getCategoryIcon(partner.category)}
+                  <span className="text-xs px-3 py-1 bg-gray-100 rounded-full text-gray-custom font-medium">
                     {partner.category}
                   </span>
                 </div>
-
-                <h3 className="text-xl font-semibold text-white mb-3">{partner.name}</h3>
-                <p className="text-gray-400 mb-4 line-clamp-3">{partner.description}</p>
-
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm font-semibold text-primary-500">{partner.impact}</span>
-                  </div>
-                  <ExternalLink 
-                    size={16} 
-                    className={`text-gray-500 transition-all duration-200 ${
-                      hoveredCard === index ? 'text-primary-500 transform translate-x-1' : ''
-                    }`}
-                  />
-                </div>
-
-                {hoveredCard === index && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary-600/10 to-emerald-600/10 rounded-xl pointer-events-none"></div>
+                {partner.highlighted && (
+                  <div className="w-3 h-3 bg-yellow-green rounded-full animate-pulse"></div>
                 )}
               </div>
-            )
-          })}
+
+              {/* Logo placeholder */}
+              <div className="w-20 h-20 bg-gray-50 border-2 border-gray-200 rounded-xl mb-4 flex items-center justify-center">
+                <div className="text-gray-custom font-bold text-sm text-center leading-tight">
+                  {partner.name.toUpperCase()}
+                </div>
+              </div>
+
+              {/* Partner name */}
+              <h3 className="text-xl font-bold text-rich-black mb-3 break-words">
+                {partner.name}
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-custom text-sm leading-relaxed">
+                {partner.description}
+              </p>
+
+              {/* Hover effect indicator */}
+              {hoveredCard === partner.id && (
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-green/5 to-pale-azure/5 rounded-2xl pointer-events-none" />
+              )}
+            </div>
+          ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <button className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 inline-flex items-center gap-2">
-            Become a Partner
-            <ExternalLink size={18} />
-          </button>
+        {/* CTA */}
+        <div className="text-center mt-16">
+          <a 
+            href="#contact" 
+            className="btn-primary inline-flex items-center gap-2"
+          >
+            Torne-se um Parceiro
+            <Building2 size={18} />
+          </a>
         </div>
       </div>
     </section>
