@@ -11,76 +11,24 @@ export default function EcosystemHero() {
 
   return (
     <section className="min-h-screen bg-gradient-to-br from-baby-powder via-gray-50 to-baby-powder pt-20 relative overflow-hidden">
-      {/* Animated Background representing Human Intelligence */}
+      {/* Background Video - Human Intelligence Theme */}
       <div className="absolute inset-0 w-full h-full">
-        {/* Neural Network Animation */}
-        <div className="absolute inset-0">
-          <svg className="w-full h-full opacity-5" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Animated neural connections */}
-            <g className="animate-pulse">
-              <circle cx="200" cy="150" r="3" fill="#A4DF00" className="animate-pulse">
-                <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite" />
-              </circle>
-              <circle cx="400" cy="200" r="3" fill="#6CCFF6" className="animate-pulse">
-                <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
-              </circle>
-              <circle cx="600" cy="100" r="3" fill="#A4DF00" className="animate-pulse">
-                <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite" />
-              </circle>
-              <circle cx="800" cy="250" r="3" fill="#6CCFF6" className="animate-pulse">
-                <animate attributeName="opacity" values="1;0.2;1" dur="3.5s" repeatCount="indefinite" />
-              </circle>
-              <circle cx="1000" cy="180" r="3" fill="#A4DF00" className="animate-pulse">
-                <animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" repeatCount="indefinite" />
-              </circle>
-              
-              {/* Connecting lines */}
-              <path d="M200 150 L400 200 L600 100 L800 250 L1000 180" stroke="#A4DF00" strokeWidth="1" fill="none" opacity="0.2" className="animate-pulse">
-                <animate attributeName="stroke-dasharray" values="0 1000; 1000 1000; 0 1000" dur="8s" repeatCount="indefinite" />
-              </path>
-              <path d="M400 200 L800 250" stroke="#6CCFF6" strokeWidth="1" fill="none" opacity="0.2" className="animate-pulse">
-                <animate attributeName="stroke-dasharray" values="1000 1000; 0 1000; 1000 1000" dur="6s" repeatCount="indefinite" />
-              </path>
-            </g>
-            
-            {/* Second layer */}
-            <g>
-              <circle cx="300" cy="400" r="3" fill="#6CCFF6" className="animate-pulse">
-                <animate attributeName="opacity" values="0.2;1;0.2" dur="4.5s" repeatCount="indefinite" />
-              </circle>
-              <circle cx="500" cy="350" r="3" fill="#A4DF00" className="animate-pulse">
-                <animate attributeName="opacity" values="1;0.4;1" dur="3.2s" repeatCount="indefinite" />
-              </circle>
-              <circle cx="700" cy="450" r="3" fill="#6CCFF6" className="animate-pulse">
-                <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" />
-              </circle>
-              <circle cx="900" cy="380" r="3" fill="#A4DF00" className="animate-pulse">
-                <animate attributeName="opacity" values="1;0.3;1" dur="4.8s" repeatCount="indefinite" />
-              </circle>
-              
-              <path d="M300 400 L500 350 L700 450 L900 380" stroke="#6CCFF6" strokeWidth="1" fill="none" opacity="0.15">
-                <animate attributeName="stroke-dasharray" values="0 800; 800 800; 0 800" dur="10s" repeatCount="indefinite" />
-              </path>
-            </g>
-            
-            {/* Third layer */}
-            <g>
-              <circle cx="150" cy="600" r="3" fill="#A4DF00" className="animate-pulse">
-                <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3.8s" repeatCount="indefinite" />
-              </circle>
-              <circle cx="450" cy="650" r="3" fill="#6CCFF6" className="animate-pulse">
-                <animate attributeName="opacity" values="0.3;1;0.3" dur="2.2s" repeatCount="indefinite" />
-              </circle>
-              <circle cx="750" cy="580" r="3" fill="#A4DF00" className="animate-pulse">
-                <animate attributeName="opacity" values="1;0.5;1" dur="4.2s" repeatCount="indefinite" />
-              </circle>
-              <circle cx="1050" cy="620" r="3" fill="#6CCFF6" className="animate-pulse">
-                <animate attributeName="opacity" values="0.4;1;0.4" dur="3.6s" repeatCount="indefinite" />
-              </circle>
-            </g>
-          </svg>
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-baby-powder/95 via-gray-50/85 to-baby-powder/95"></div>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+          style={{ filter: 'brightness(0.4) contrast(1.3) saturate(0.8)' }}
+        >
+          <source src="https://videos.pexels.com/video-files/3196217/3196217-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/2278095/2278095-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+        </video>
+        {/* White overlay for watermark effect */}
+        <div className="absolute inset-0 bg-baby-powder/75"></div>
+        
+        {/* Subtle Brand Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-yellow-green/8 via-transparent to-pale-azure/8"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
