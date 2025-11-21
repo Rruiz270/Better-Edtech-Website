@@ -1,15 +1,13 @@
 import Navigation from '@/components/Navigation'
-import EcosystemHero from '@/components/EcosystemHero'
-import ProductShowcase from '@/components/ProductShowcase'
+import BetterLearnHero from '@/components/products/BetterLearnHero'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
-export default function Home() {
+export default function BetterLearn() {
   return (
     <main className="min-h-screen">
       <Navigation />
-      <EcosystemHero />
-      <ProductShowcase />
+      <BetterLearnHero />
       <Contact />
       <Footer />
     </main>

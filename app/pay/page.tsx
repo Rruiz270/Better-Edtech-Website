@@ -1,15 +1,15 @@
 import Navigation from '@/components/Navigation'
-import EcosystemHero from '@/components/EcosystemHero'
-import ProductShowcase from '@/components/ProductShowcase'
+import BetterPayHero from '@/components/products/BetterPayHero'
+import BetterPayFeatures from '@/components/products/BetterPayFeatures'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
-export default function Home() {
+export default function BetterPay() {
   return (
     <main className="min-h-screen">
       <Navigation />
-      <EcosystemHero />
-      <ProductShowcase />
+      <BetterPayHero />
+      <BetterPayFeatures />
       <Contact />
       <Footer />
     </main>
