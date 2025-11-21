@@ -13,22 +13,29 @@ export default function EcosystemHero() {
     <section className="min-h-screen bg-gradient-to-br from-baby-powder via-gray-50 to-baby-powder pt-20 relative overflow-hidden">
       {/* Background Video - Human Intelligence Theme */}
       <div className="absolute inset-0 w-full h-full">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-          style={{ filter: 'brightness(0.4) contrast(1.3) saturate(0.8)' }}
-        >
-          <source src="https://videos.pexels.com/video-files/3196217/3196217-uhd_2560_1440_25fps.mp4" type="video/mp4" />
-          <source src="https://videos.pexels.com/video-files/2278095/2278095-uhd_2560_1440_25fps.mp4" type="video/mp4" />
-        </video>
-        {/* White overlay for watermark effect */}
-        <div className="absolute inset-0 bg-baby-powder/75"></div>
+        <iframe
+          src="https://www.youtube.com/embed/5MgBikgcWnY?autoplay=1&mute=1&loop=1&playlist=5MgBikgcWnY&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0"
+          className="w-full h-full object-cover scale-150 -translate-y-20"
+          style={{ 
+            filter: 'brightness(0.3) contrast(1.2) saturate(0.7) blur(1px)',
+            pointerEvents: 'none'
+          }}
+          allow="autoplay; encrypted-media"
+          frameBorder="0"
+        ></iframe>
+        
+        {/* Strong white overlay for watermark effect */}
+        <div className="absolute inset-0 bg-baby-powder/85"></div>
         
         {/* Subtle Brand Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-yellow-green/8 via-transparent to-pale-azure/8"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-yellow-green/10 via-transparent to-pale-azure/10"></div>
+        
+        {/* Animated pattern overlay for visual interest */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-green/20 rounded-full animate-float"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-pale-azure/20 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-40 right-20 w-48 h-48 bg-yellow-green/30 rounded-full animate-float" style={{animationDelay: '4s'}}></div>
+        </div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
