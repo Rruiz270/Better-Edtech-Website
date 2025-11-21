@@ -10,8 +10,80 @@ export default function EcosystemHero() {
   }, [])
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-baby-powder via-gray-50 to-baby-powder pt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <section className="min-h-screen bg-gradient-to-br from-baby-powder via-gray-50 to-baby-powder pt-20 relative overflow-hidden">
+      {/* Animated Background representing Human Intelligence */}
+      <div className="absolute inset-0 w-full h-full">
+        {/* Neural Network Animation */}
+        <div className="absolute inset-0">
+          <svg className="w-full h-full opacity-5" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Animated neural connections */}
+            <g className="animate-pulse">
+              <circle cx="200" cy="150" r="3" fill="#A4DF00" className="animate-pulse">
+                <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="400" cy="200" r="3" fill="#6CCFF6" className="animate-pulse">
+                <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="600" cy="100" r="3" fill="#A4DF00" className="animate-pulse">
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="800" cy="250" r="3" fill="#6CCFF6" className="animate-pulse">
+                <animate attributeName="opacity" values="1;0.2;1" dur="3.5s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="1000" cy="180" r="3" fill="#A4DF00" className="animate-pulse">
+                <animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" repeatCount="indefinite" />
+              </circle>
+              
+              {/* Connecting lines */}
+              <path d="M200 150 L400 200 L600 100 L800 250 L1000 180" stroke="#A4DF00" strokeWidth="1" fill="none" opacity="0.2" className="animate-pulse">
+                <animate attributeName="stroke-dasharray" values="0 1000; 1000 1000; 0 1000" dur="8s" repeatCount="indefinite" />
+              </path>
+              <path d="M400 200 L800 250" stroke="#6CCFF6" strokeWidth="1" fill="none" opacity="0.2" className="animate-pulse">
+                <animate attributeName="stroke-dasharray" values="1000 1000; 0 1000; 1000 1000" dur="6s" repeatCount="indefinite" />
+              </path>
+            </g>
+            
+            {/* Second layer */}
+            <g>
+              <circle cx="300" cy="400" r="3" fill="#6CCFF6" className="animate-pulse">
+                <animate attributeName="opacity" values="0.2;1;0.2" dur="4.5s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="500" cy="350" r="3" fill="#A4DF00" className="animate-pulse">
+                <animate attributeName="opacity" values="1;0.4;1" dur="3.2s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="700" cy="450" r="3" fill="#6CCFF6" className="animate-pulse">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="900" cy="380" r="3" fill="#A4DF00" className="animate-pulse">
+                <animate attributeName="opacity" values="1;0.3;1" dur="4.8s" repeatCount="indefinite" />
+              </circle>
+              
+              <path d="M300 400 L500 350 L700 450 L900 380" stroke="#6CCFF6" strokeWidth="1" fill="none" opacity="0.15">
+                <animate attributeName="stroke-dasharray" values="0 800; 800 800; 0 800" dur="10s" repeatCount="indefinite" />
+              </path>
+            </g>
+            
+            {/* Third layer */}
+            <g>
+              <circle cx="150" cy="600" r="3" fill="#A4DF00" className="animate-pulse">
+                <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3.8s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="450" cy="650" r="3" fill="#6CCFF6" className="animate-pulse">
+                <animate attributeName="opacity" values="0.3;1;0.3" dur="2.2s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="750" cy="580" r="3" fill="#A4DF00" className="animate-pulse">
+                <animate attributeName="opacity" values="1;0.5;1" dur="4.2s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="1050" cy="620" r="3" fill="#6CCFF6" className="animate-pulse">
+                <animate attributeName="opacity" values="0.4;1;0.4" dur="3.6s" repeatCount="indefinite" />
+              </circle>
+            </g>
+          </svg>
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-baby-powder/95 via-gray-50/85 to-baby-powder/95"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         {/* Main Hero Content */}
         <div className={`text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {/* Epic Main Headline */}
@@ -30,12 +102,23 @@ export default function EcosystemHero() {
             </div>
           </div>
 
+          {/* Human Intelligence First Banner */}
+          <div className="mb-8">
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-green/20 to-pale-azure/20 backdrop-blur-sm border border-yellow-green/30 rounded-full px-6 py-3">
+              <div className="w-3 h-3 bg-gradient-to-r from-yellow-green to-pale-azure rounded-full animate-pulse"></div>
+              <span className="text-lg font-bold text-rich-black tracking-wider">INTELIGÊNCIA HUMANA SEMPRE EM PRIMEIRO</span>
+            </div>
+          </div>
+
           {/* Powerful Subheadline */}
           <div className="max-w-5xl mx-auto mb-16">
             <p className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-custom mb-6 leading-tight">
               <span className="font-medium text-rich-black">Uma família de produtos integrados</span><br />
-              que <span className="text-yellow-green font-semibold">revoluciona a educação</span>, conecta comunidades<br />
-              e <span className="text-pale-azure font-semibold">impulsiona a transformação digital</span> no Brasil
+              que <span className="text-yellow-green font-semibold">potencializa educadores</span>, conecta comunidades<br />
+              e <span className="text-pale-azure font-semibold">amplifica o potencial humano</span> através da tecnologia
+            </p>
+            <p className="text-lg md:text-xl text-gray-custom/80 font-light mt-4">
+              Onde a IA serve como ferramenta, mas a <span className="text-rich-black font-semibold">sabedoria humana</span> sempre lidera a transformação
             </p>
           </div>
 
